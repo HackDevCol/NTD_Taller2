@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🎤 Eminem - Página Tributo
 
 Página web tributo dedicada a **Eminem** (Marshall Bruce Mathers III), uno de los artistas más influyentes en la historia del hip-hop.
@@ -50,17 +49,6 @@ npm run build
 
 Esto generará una carpeta `out` con los archivos estáticos listos para deployment.
 
-## 🌐 Deployment en GitHub Pages
-
-1. Asegúrate de que tu repositorio esté configurado correctamente
-2. Ejecuta el build:
-```bash
-npm run build
-```
-3. Los archivos en la carpeta `out` se deployarán automáticamente
-4. Ve a Settings → Pages en GitHub
-5. Selecciona la rama `main` 
-6. Guarda y espera a que se genere el link
 
 ## 📁 Estructura del Proyecto
 
@@ -90,24 +78,30 @@ npm run build
 5. **Legado** - Impacto cultural y canciones icónicas
 6. **Footer** - Enlaces y redes sociales
 
+## 👨‍💻 Equipo
+
+- **Jeisson Estiber Palma Renteria** (506231703) - Componentes Hero y Footer
+- **Julian David Moreno Gutierrez** (506231015) - Componentes Biography y Awards  
+- **Gustavo Gallego** (506241038) - Componentes Discography y Legacy
+
 ## 👥 Trabajo Colaborativo
 
-### Sugerencias de división de trabajo:
+### División de trabajo:
 
-**Persona 1:**
-- Hero component
-- Footer component
+**Jeisson Estiber Palma Renteria:**
+- Hero component con animaciones
+- Footer component con enlaces sociales
 - Configuración inicial del proyecto
 
-**Persona 2:**
-- Biography component
-- Awards component
-- Estilos globales
+**Julian David Moreno Gutierrez:**
+- Biography component con timeline
+- Awards component con premios
+- Estilos globales y configuración de Tailwind
 
-**Persona 3:**
-- Discography component
-- Legacy component
-- Optimización y testing
+**Gustavo Gallego:**
+- Discography component con grid de álbumes
+- Legacy component con impacto cultural
+- Optimización y testing final
 
 ### Flujo de trabajo Git:
 
@@ -116,14 +110,14 @@ npm run build
 git clone https://github.com/HackDevCol/NTD_Taller2.git
 
 # Crear rama para tu feature
-git checkout -b feature/tu-nombre-componente
+git checkout -b feature/nombre-componente
 
 # Hacer cambios y commits
 git add .
-git commit -m "Añadir componente Hero con animaciones"
+git commit -m "Añadir componente con descripción detallada"
 
 # Push a tu rama
-git push origin feature/tu-nombre-componente
+git push origin feature/nombre-componente
 
 # Crear Pull Request en GitHub
 # Resolver conflictos si existen
@@ -135,10 +129,10 @@ git push origin feature/tu-nombre-componente
 Usa mensajes descriptivos y en español:
 
 ✅ Buenos ejemplos:
-- "Añadir componente de biografía con timeline"
-- "Implementar animaciones en sección de premios"
-- "Optimizar imágenes y rendimiento"
-- "Corregir responsive en discografía"
+- "Añadir componente de biografía con timeline animado"
+- "Implementar animaciones de entrada en sección de premios"
+- "Optimizar imágenes y mejorar rendimiento general"
+- "Corregir responsive en grid de discografía"
 
 ❌ Evitar:
 - "fix"
@@ -148,34 +142,39 @@ Usa mensajes descriptivos y en español:
 
 ## 🎯 Checklist del Taller
 
-- [ ] Repositorio creado y configurado
-- [ ] Todos los colaboradores añadidos
+- [x] Repositorio creado y configurado
+- [x] Todos los colaboradores añadidos
 - [ ] Cada miembro con mínimo 10 commits significativos
 - [ ] Página funcionando correctamente
 - [ ] Deployed en GitHub Pages
-- [ ] README completo
+- [x] README completo
 - [ ] Sin errores de ortografía en commits
-
-## 👨‍💻 Equipo
-
-- [Nombre 1] - Componentes Hero y Footer
-- [Nombre 2] - Componentes Biography y Awards  
-- [Nombre 3] - Componentes Discography y Legacy
 
 ## 📄 Licencia
 
-Este es un proyecto educativo para el Taller 2 de NTD.
+Este es un proyecto educativo para el Taller 2 de NTD - Nuevas Tecnologías del Desarrollo.
 
 ## 🙏 Créditos
 
-- Diseño y desarrollo: [Nombres del equipo]
-- Información sobre Eminem: Wikipedia, Billboard, Grammy.com
-- Imágenes: Uso educativo
+- **Diseño y desarrollo**: Jeisson Palma, Julian Moreno, Gustavo Gallego
+- **Información sobre Eminem**: Wikipedia, Billboard, Grammy.com
+- **Imágenes**: Uso educativo
+- **Universidad**: Fundación Universitaria Konrad Lorenz
+- **Materia**: Nuevas Tecnologías del Desarrollo (NTD)
+- **Año**: 2026-1
+
+## 🔗 Enlaces
+
+- **Repositorio GitHub**: https://github.com/HackDevCol/NTD_Taller2
 
 ---
 
 **"Success is my only option, failure's not"** - Eminem, Lose Yourself
-=======
-# NTD_Taller2
-/
->>>>>>> 12ca8fe5ea114027e96d46007e63b453c139ff47
+
+---
+
+### 📚 Documentación Adicional
+
+Para más información sobre cómo trabajar con el proyecto, consulta:
+- `INSTRUCCIONES.md` - Guía paso a paso para setup y colaboración
+- `DOCUMENTO_ENTREGA.md` - Documento oficial de entrega del taller
