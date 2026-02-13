@@ -1,12 +1,12 @@
 'use client';
 
-import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 export default function Discography() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [selectedAlbum, setSelectedAlbum] = useState<any>(null);
 
   const albums = [
     {
