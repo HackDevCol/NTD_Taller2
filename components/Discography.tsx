@@ -79,10 +79,7 @@ export default function Discography() {
 
   return (
     <section className="py-32 px-4 md:px-8 bg-black relative overflow-hidden">
-      {/* Background effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-zinc-950 via-black to-zinc-950"></div>
-      <div className="absolute top-1/4 left-0 w-96 h-96 bg-red-600/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-red-800/10 rounded-full blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
@@ -95,79 +92,71 @@ export default function Discography() {
           <h2 className="font-bebas text-7xl md:text-9xl text-gradient mb-6">
             DISCOGRAFÍA
           </h2>
-          <p className="text-zinc-400 text-xl max-w-3xl mx-auto">
-            Más de 220 millones de discos vendidos en todo el mundo
-          </p>
-          <div className="w-32 h-1 bg-red-600 mx-auto mt-6"></div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {albums.map((album, index) => (
             <motion.div
               key={album.title}
+              onClick={() => setSelectedAlbum(album)}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative bg-zinc-900 border border-red-900/20 p-6 hover-lift overflow-hidden"
+              whileHover={{ scale: 1.05 }}
+              className="cursor-pointer group relative bg-zinc-900 border border-red-900/20 p-6 overflow-hidden"
             >
-              {/* Hover effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-red-600/0 to-red-600/0 group-hover:from-red-600/10 group-hover:to-red-800/10 transition-all duration-500"></div>
-              
               <div className="relative z-10">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="font-bebas text-3xl text-white group-hover:text-red-500 transition-colors duration-300">
-                      {album.title}
-                    </h3>
-                    <p className="text-red-500 font-oswald text-xl">{album.year}</p>
-                  </div>
-                  <div className="w-12 h-12 bg-red-600/20 flex items-center justify-center group-hover:bg-red-600 transition-colors duration-300">
-                    <span className="font-bebas text-2xl text-white">{index + 1}</span>
-                  </div>
-                </div>
-                
-                <p className="text-zinc-400 mb-3">{album.description}</p>
-                <div className="flex items-center gap-2">
-                  <div className="h-px flex-1 bg-red-900/30"></div>
-                  <span className="text-xs text-zinc-500 font-oswald tracking-wider">
-                    {album.sales}
-                  </span>
-                  <div className="h-px flex-1 bg-red-900/30"></div>
-                </div>
+                <h3 className="font-bebas text-3xl text-white group-hover:text-red-500 transition-colors">
+                  {album.title}
+                </h3>
+                <p className="text-red-500 font-oswald text-xl">{album.year}</p>
+                <p className="text-zinc-400 mt-2">{album.description}</p>
               </div>
-
-              {/* Corner accent */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-red-600/20 to-transparent"></div>
             </motion.div>
           ))}
         </div>
 
-        {/* Stats section */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6"
-        >
-          {[
-            { number: "220M+", label: "Discos Vendidos" },
-            { number: "15", label: "Grammys Ganados" },
-            { number: "11", label: "Álbumes de Estudio" },
-            { number: "1", label: "Oscar Ganado" }
-          ].map((stat, index) => (
-            <div 
-              key={stat.label}
-              className="text-center p-6 bg-zinc-900 border border-red-900/20"
+        {/* MODAL */}
+        <AnimatePresence>
+          {selectedAlbum && (
+            <motion.div
+              className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedAlbum(null)}
             >
-              <div className="font-bebas text-5xl md:text-6xl text-gradient mb-2">
-                {stat.number}
-              </div>
-              <div className="text-zinc-400 text-sm tracking-widest uppercase">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </motion.div>
+              <motion.div
+                className="bg-zinc-900 border border-red-600 p-8 max-w-lg w-full"
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.8, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <h3 className="font-bebas text-4xl text-red-500 mb-2">
+                  {selectedAlbum.title}
+                </h3>
+                <p className="text-white text-lg mb-4">
+                  Año: {selectedAlbum.year}
+                </p>
+                <p className="text-zinc-400 mb-4">
+                  Ventas: {selectedAlbum.sales}
+                </p>
+                <p className="text-zinc-300">
+                  {selectedAlbum.description}
+                </p>
+
+                <button
+                  onClick={() => setSelectedAlbum(null)}
+                  className="mt-6 px-6 py-2 bg-red-600 hover:bg-red-700 transition-colors text-white"
+                >
+                  Cerrar
+                </button>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );
